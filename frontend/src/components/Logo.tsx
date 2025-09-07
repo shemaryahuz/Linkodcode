@@ -4,7 +4,7 @@ export default function Logo() {
       <img
         src="../../public/linkodcode-logo.jpg"
         alt="Linkodcode Logo"
-        width={"80px"}
+        width={"50px"}
       />
     </section>
   );
