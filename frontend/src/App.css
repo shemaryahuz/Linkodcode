@@ -1,10 +1,29 @@
+.app {
+  min-height: 100vh;
+  font-family: Roboto, sans-serif;
+}
+
 .app header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding: 2rem;
+  padding: 0;
+  position: sticky;
+  border-bottom: 3px outset #0072b1;
 }
 
 .logo {
-  justify-self: flex-start;
+  margin-right: auto;
+  padding: 3rem;
+}
+
+.slogan {
+  margin-right: auto;
+  font-size: 2rem;
+  padding: 1rem;
+  color: #0072b1;
+}
+
+.slogan p {
+  color: #333;
 }

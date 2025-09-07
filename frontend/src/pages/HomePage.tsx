@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { loadPosts, type Post } from "../services/postsService";
 import PostCard from "../components/PostCard";
+import "../styles/homePage.css"
 
 const postsArr: Post[] = await loadPosts();
 
