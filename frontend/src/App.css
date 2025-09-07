@@ -2,28 +2,3 @@
   min-height: 100vh;
   font-family: Roboto, sans-serif;
 }
-
-.app header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0;
-  position: sticky;
-  border-bottom: 3px outset #0072b1;
-}
-
-.logo {
-  margin-right: auto;
-  padding: 3rem;
-}
-
-.slogan {
-  margin-right: auto;
-  font-size: 2rem;
-  padding: 1rem;
-  color: #0072b1;
-}
-
-.slogan p {
-  color: #333;
-}

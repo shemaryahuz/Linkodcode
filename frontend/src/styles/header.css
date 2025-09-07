@@ -1,0 +1,8 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  position: sticky;
+  border-bottom: 3px outset #0072b1;
+}
