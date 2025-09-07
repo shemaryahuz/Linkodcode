@@ -1,26 +1,30 @@
 [
     {
         "id": 1,
-        "title": "Post 1",
-        "content": "This is the content of post 1",
-        "author": "John"
+        "imageUrl": "../../data/img/fish.jpg",
+        "description": "This is the content of post 1",
+        "author": "John",
+        "time": "12:00 01-01-2025"
     },
     {
         "id": 2,
-        "title": "Post 2",
-        "content": "This is the content of post 2",
-        "author": "Alice"
+        "imageUrl": "../../data/img/lion.jpg",
+        "description": "This is the content of post 2",
+        "author": "Alice",
+        "time": "14:00 01-01-2025"
     },
     {
         "id": 3,
-        "title": "Post 3",
-        "content": "This is the content of post 2",
-        "author": "Bobe"
+        "imageUrl": "../../data/img/view.jpg",
+        "description": "This is the content of post 2",
+        "author": "Bobe",
+        "time":"16:00 01-01-2025"
     },
     {
         "id": 4,
-        "title": "Post 4",
-        "content": "This is the content of post 4",
-        "author": "David"
+        "imageUrl": "../../data/img/rainbow.jpg",
+        "description": "This is the content of post 4",
+        "author": "David",
+        "time":"18:00 01-01-2025"
     }
 ]

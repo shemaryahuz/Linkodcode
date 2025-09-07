@@ -14,9 +14,10 @@ export default function HomePage() {
       {posts.map((post: Post) => (
         <PostCard 
             key={post.id} 
-            title={post.title} 
-            content={post.content} 
+            imageUrl={post.imageUrl} 
+            description={post.description} 
             author={post.author}
+            time={post.time}
         />
       ))}
     </main>

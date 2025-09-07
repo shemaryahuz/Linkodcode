@@ -1,9 +1,10 @@
 
 export interface Post {
   id?: number;
-  title: string;
-  content: string;
+  imageUrl: string;
+  description: string;
   author: string;
+  time: string;
 }
 
 export async function loadPosts(): Promise<Post[]> {
