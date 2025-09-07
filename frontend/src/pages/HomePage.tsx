@@ -4,13 +4,19 @@ import PostCard from "../components/PostCard";
 
 const postsArr: Post[] = await loadPosts();
 
-export default function HomePage() {
 
+// component to represent the hom page content
+export default function HomePage() {
   const [posts, setPosts] = useState(postsArr);
   return (
     <main className="home-page">
       {posts.map((post: Post) => (
-        <PostCard key={post.id} title={post.title} content={post.content} author={post.author}/>
+        <PostCard 
+            key={post.id} 
+            title={post.title} 
+            content={post.content} 
+            author={post.author}
+        />
       ))}
     </main>
   )

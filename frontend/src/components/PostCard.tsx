@@ -1,5 +1,7 @@
 import type { Post } from "../services/postsService";
 
+
+// component to represent post card
 export default function PostCard({ title, content, author }:Post) {
   return (
     <section className="postCard">
