@@ -11,3 +11,9 @@
         grid-template-columns: 1fr;
     }
 }
+
+@media screen and (min-width: 1200px) {
+    .home-page {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
