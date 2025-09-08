@@ -7,9 +7,8 @@ export default function PostDetails({
     author,
     time,
     }: Post) {
-    const [like, setLike] = useState(false);
-    const [likeCount, setLikeCount] = useState(0);
 
+    const [like, setLike] = useState(false);
     const toggleLike = () => {
         setLike(!like);
     };
