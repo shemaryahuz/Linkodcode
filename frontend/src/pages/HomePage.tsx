@@ -4,14 +4,15 @@ import {
   type ErrorMessage,
   type Post,
 } from "../services/postsService";
-import PostCard from "../components/post/PostCard";
 import "../styles/homePage.css";
+import PostsFeed from "../components/post/PostsFeed";
 
 // component to represent the hom page content
 export default function HomePage() {
   const initPosts: Post[] = [];
-  const [posts, setPosts] = useState(initPosts);
-  const [error, setError] = useState("");
+  const [ posts, setPosts ] = useState(initPosts);
+  const [ isLoading, setIsLoading ] = useState(true);
+  const [ error, setError ] = useState("");
 
   const loadPosts = async () => {
     const result: Post[] | ErrorMessage = await fetchPosts();
@@ -20,29 +21,16 @@ export default function HomePage() {
       return;
     }
     setPosts(result);
+    setIsLoading(false);
   };
 
   useEffect(() => {
     loadPosts();
   }, []);
 
-  return error ? (
-    <section className="error-message">
-      <img src="images/error-icon.png" alt="error icon" />
-      <h2>Failed</h2>
-      <p>{error}</p>
-    </section>
-  ) : (
-    <main className="home-page">
-      {posts?.map((post: Post) => (
-        <PostCard
-          key={post.id}
-          imageUrl={post.imageUrl}
-          description={post.description}
-          author={post.author}
-          time={post.time}
-        />
-      ))}
+  return (
+    <main>
+      <PostsFeed posts={posts}/>
     </main>
   );
 }

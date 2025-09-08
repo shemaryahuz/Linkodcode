@@ -1,9 +1,6 @@
 .home-page {
     min-height: 100vh;
     min-width: 100vw;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    background-color: #a2c8ee;
 }
 
 .error-message {
@@ -26,16 +23,4 @@
 .error-message h2 {
     font-size: 3rem;
     color: #8b0000;
-}
-
-@media screen and (max-width: 576px) {
-    .home-page {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    .home-page {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
 }
