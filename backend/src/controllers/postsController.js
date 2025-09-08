@@ -1,6 +1,6 @@
 // handlers for requests on '/posts' endpoints
 
-import { readPosts } from "../dal/postsDAL.js";
+import { readPosts } from "../services/postsService.js";
 
 export async function getAllPosts(req, res) {
 
