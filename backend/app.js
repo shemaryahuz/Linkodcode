@@ -1,14 +1,18 @@
 import express from "express";
 import cors from "cors";
+import path from "path";
 import postsRouter from "./src/routes/postsRouter.js";
 
 const app = express();
 
-app.use(cors())
+app.use(cors());
+
+const __dirname = path.resolve();
+app.use("/api", express.static(path.join(__dirname, "public")));
 
 app.use(express.json());
 
-app.use("/posts", postsRouter);
+app.use("/api/posts", postsRouter);
 
 app.use("/", (req, res) => {
     res.status(404).json({ error: "Route not found" });
