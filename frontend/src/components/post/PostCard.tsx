@@ -10,7 +10,7 @@ export default function PostCard(post:Post) {
     <section className="post-card">
       <img 
         className="post-img"
-        src={post.imageUrl} 
+        src={`http://localhost:3000/api/${post.imageUrl}`} 
         alt="post image" 
       />
       <PostDetails 

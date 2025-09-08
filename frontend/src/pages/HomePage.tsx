@@ -3,7 +3,7 @@ import { loadPosts, type Post } from "../services/postsService";
 import PostCard from "../components/post/PostCard";
 import "../styles/homePage.css"
 
-const postsArr: Post[] = await loadPosts();
+const postsArr: Post[] | void = await loadPosts();
 
 
 // component to represent the hom page content
@@ -11,7 +11,7 @@ export default function HomePage() {
   const [posts, setPosts] = useState(postsArr);
   return (
     <main className="home-page">
-      {posts.map((post: Post) => (
+      {posts?.map((post: Post) => (
         <PostCard 
             key={post.id} 
             imageUrl={post.imageUrl} 
