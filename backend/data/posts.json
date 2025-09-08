@@ -1,28 +1,28 @@
 [
     {
         "id": 1,
-        "imageUrl": "/images/1.jpg",
+        "imageUrl": "/images/img1.jpg",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur cupiditate expedita sint! Natus nesciunt quae cumque voluptate reprehenderit quidem beatae distinctio rem mollitia excepturi laboriosam iusto cum, repellendus enim consequuntur.",
         "author": "John",
         "time": "12:00 01-01-2025"
     },
     {
         "id": 2,
-        "imageUrl": "/images/2.jpg",
+        "imageUrl": "/images/img2.jpg",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi quidem sunt alias distinctio nihil quae dolore, nam rerum minus dicta quaerat maiores dolorem architecto. Dignissimos numquam nisi voluptatibus ipsam quo.",
         "author": "Alice",
         "time": "14:00 01-01-2025"
     },
     {
         "id": 3,
-        "imageUrl": "/images/3.jpg",
+        "imageUrl": "/images/img3.jpg",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis eligendi dolores adipisci a eos aliquid hic, velit porro eveniet quam ipsam natus necessitatibus nisi! Dignissimos rem ex neque ipsum accusantium?",
         "author": "Bobe",
         "time":"16:00 01-01-2025"
     },
     {
         "id": 4,
-        "imageUrl": "/images/4.jpg",
+        "imageUrl": "/images/img4.jpg",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit saepe, eaque aut incidunt nam, voluptatem cum id alias reprehenderit libero enim sequi est exercitationem inventore corporis ipsa praesentium explicabo tempore!",
         "author": "David",
         "time":"18:00 01-01-2025"
