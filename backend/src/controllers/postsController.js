@@ -1,0 +1,1 @@
+// handlers for requests on '/posts' endpoints
