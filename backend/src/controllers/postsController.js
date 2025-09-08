@@ -1,8 +1,10 @@
 // handlers for requests on '/posts' endpoints
 
+import { readPosts } from "../dal/postsDAL.js";
+
 export async function getAllPosts(req, res) {
 
-    const posts = await getAllPosts();
+    const posts = await readPosts();
 
     if (!posts) {
         return res.status(500).json({ error: "Internal server error" });
