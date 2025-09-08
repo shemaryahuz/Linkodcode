@@ -1,10 +1,10 @@
-import "../styles/logo.css"
+import "../../styles/logo.css"
 
 export default function Logo() {
   return (
     <section className="logo">
       <img
-        src="../../public/linkodcode-logo.jpg"
+        src="/linkodcode-logo.jpg"
         alt="Linkodcode Logo"
         width={"50px"}
       />

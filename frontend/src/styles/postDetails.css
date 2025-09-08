@@ -1,0 +1,30 @@
+
+.post-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.description {
+    padding: 1rem 0.5rem;
+    color: #1c2c34;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+
+.author, .time {
+    align-self: flex-end;
+    color: hsla(200, 30%, 16%, 0.5);
+}
+
+.like-btn {
+    max-height: 2.5rem;
+    border: none;
+}
+
+.like-btn img{
+    max-height: 100%;
+}

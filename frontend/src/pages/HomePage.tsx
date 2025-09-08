@@ -1,25 +1,40 @@
-import { useState } from "react";
-import { loadPosts, type Post } from "../services/postsService";
-import PostCard from "../components/PostCard";
-import "../styles/homePage.css"
-
-const postsArr: Post[] = await loadPosts();
-
+import { useEffect, useState } from "react";
+import {
+  fetchPosts,
+  type ErrorMessage,
+  type Post,
+} from "../services/postsService";
+import "../styles/homePage.css";
+import PostsFeed from "../components/post/PostsFeed";
+import ErrorDisplay from "../components/common/ErrorDisplay";
 
 // component to represent the hom page content
 export default function HomePage() {
-  const [posts, setPosts] = useState(postsArr);
+  const initPosts: Post[] = [];
+  const [ posts, setPosts ] = useState(initPosts);
+  const [ isLoading, setIsLoading ] = useState(true);
+  const [ error, setError ] = useState("");
+
+  const loadPosts = async () => {
+    const result: Post[] | ErrorMessage = await fetchPosts();
+    if ("error" in result) {
+      setError(result.error);
+      return;
+    }
+    setPosts(result);
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    loadPosts();
+  }, []);
+
   return (
-    <main className="home-page">
-      {posts.map((post: Post) => (
-        <PostCard 
-            key={post.id} 
-            imageUrl={post.imageUrl} 
-            description={post.description} 
-            author={post.author}
-            time={post.time}
-        />
-      ))}
+    <main>
+      {error ? (
+       <ErrorDisplay error={error}/> ) : (
+       <PostsFeed posts={posts}/>)
+      }
     </main>
-  )
+  );
 }

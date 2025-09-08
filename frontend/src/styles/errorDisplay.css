@@ -1,0 +1,21 @@
+.error-message {
+    margin-top: 20vh;
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.error-message img {
+    margin: auto;
+    width: 5rem;
+}
+
+.error-message h2, p {
+    text-align: center;
+}
+
+.error-message h2 {
+    font-size: 3rem;
+    color: #8b0000;
+}
