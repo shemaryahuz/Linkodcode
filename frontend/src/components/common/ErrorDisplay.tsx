@@ -1,6 +1,10 @@
-import type { ErrorMessage } from "../../services/postsService";
+import "../../styles/errorDisplay.css";
 
-export default function ErrorMessage({error}: ErrorMessage) {
+type ErrorDisplayProps = {
+  error: string;
+}
+
+export default function ErrorDisplay({error}: ErrorDisplayProps) {
   return (
     <section className="error-message">
       <img src="images/error-icon.png" alt="error icon" />

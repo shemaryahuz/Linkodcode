@@ -6,6 +6,7 @@ import {
 } from "../services/postsService";
 import "../styles/homePage.css";
 import PostsFeed from "../components/post/PostsFeed";
+import ErrorDisplay from "../components/common/ErrorDisplay";
 
 // component to represent the hom page content
 export default function HomePage() {
@@ -30,7 +31,10 @@ export default function HomePage() {
 
   return (
     <main>
-      <PostsFeed posts={posts}/>
+      {error ? (
+       <ErrorDisplay error={error}/> ) : (
+       <PostsFeed posts={posts}/>)
+      }
     </main>
   );
 }
