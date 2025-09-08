@@ -26,21 +26,23 @@ export default function HomePage() {
     loadPosts();
   }, []);
 
-  return (
+  return error ? (
+    <section className="error-message">
+      <img src="images/error-icon.png" alt="error icon" />
+      <h2>Failed</h2>
+      <p>{error}</p>
+    </section>
+  ) : (
     <main className="home-page">
-      {error ? (
-        <section className="error-message">Error loading posts: {error}</section>
-      ) : (
-        posts?.map((post: Post) => (
-          <PostCard
-            key={post.id}
-            imageUrl={post.imageUrl}
-            description={post.description}
-            author={post.author}
-            time={post.time}
-          />
-        ))
-      )}
+      {posts?.map((post: Post) => (
+        <PostCard
+          key={post.id}
+          imageUrl={post.imageUrl}
+          description={post.description}
+          author={post.author}
+          time={post.time}
+        />
+      ))}
     </main>
   );
 }
