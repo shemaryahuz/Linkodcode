@@ -27,11 +27,11 @@ export default function PostCard({ imageUrl, description, author, time }:Post) {
         >
           {
             like ? (<img 
-              src="../../public/like-icon-clicked.png"
+              src="images/like-icon-clicked.png"
               alt="like icon clicked"
             />) :
             (<img
-              src="../../public/like-icon.png"
+              src="images/like-icon.png"
               alt="like icon"
             />)
           }
