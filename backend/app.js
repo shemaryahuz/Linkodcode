@@ -8,11 +8,11 @@ const app = express();
 app.use(cors());
 
 const __dirname = path.resolve();
-app.use("/", express.static(path.join(__dirname, "public")));
+app.use("/api", express.static(path.join(__dirname, "public")));
 
 app.use(express.json());
 
-app.use("/posts", postsRouter);
+app.use("/api/posts", postsRouter);
 
 app.use("/", (req, res) => {
     res.status(404).json({ error: "Route not found" });
