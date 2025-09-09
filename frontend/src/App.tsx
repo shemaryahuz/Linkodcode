@@ -6,7 +6,7 @@ import './App.css'
 import HomePage from './pages/HomePage'
 import Layout from './components/layout/Layout'
 import AboutPage from './pages/AboutPage'
-import AddPostPage from './pages/AddPostPage'
+import AddPostPage from './pages/SubmitPostPage'
 
 function App() {
 
