@@ -1,8 +1,8 @@
-
+import "../../styles/nav.css";
 
 export default function Nav() {
   return (
-    <nav>
+    <nav className="nav">
       <ul>
         <li><a href="example@.com">1</a></li>
         <li><a href="example@.com">2</a></li>

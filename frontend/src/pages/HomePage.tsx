@@ -7,13 +7,14 @@ import {
 import PostsFeed from "../components/post/PostsFeed";
 import ErrorDisplay from "../components/common/ErrorDisplay";
 import LoadingDisplay from "../components/common/LoadingDisplay";
+import Nav from "../components/layout/Nav";
 
 // component to represent the hom page content
 export default function HomePage() {
   const initArray: Post[] = [];
-  const [ posts, setPosts ] = useState(initArray);
-  const [ isLoading, setIsLoading ] = useState(true);
-  const [ error, setError ] = useState("");
+  const [posts, setPosts] = useState(initArray);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState("");
 
   const loadPosts = async () => {
     const result: Post[] | ErrorMessage = await fetchPosts();
@@ -31,10 +32,11 @@ export default function HomePage() {
   }, []);
 
   return (
-    <main>
+    <main className="page">
+      <Nav />
       {isLoading && <LoadingDisplay />}
-      {!isLoading && error && <ErrorDisplay error={error}/>}
-      {!isLoading && !error && <PostsFeed posts={posts}/>}
+      {!isLoading && error && <ErrorDisplay error={error} />}
+      {!isLoading && !error && <PostsFeed posts={posts} />}
     </main>
   );
 }

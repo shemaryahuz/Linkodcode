@@ -1,5 +1,4 @@
 .error-message {
-    margin-top: 20vh;
     justify-self: center;
     align-self: center;
     display: flex;
@@ -7,7 +6,8 @@
 }
 
 .error-message img {
-    margin: auto;
+    margin-top: 30vh;
+    align-self: center;
     width: 5rem;
 }
 

@@ -1,8 +1,10 @@
 .footer {
   background-color: #f5f5f5;
   border-top: 3px outset #084a90;
-  position: sticky;
+  position: fixed;
   bottom: 0; 
+  min-width: 100vw;
+  margin-top: auto;
   padding: 1rem;
 }
 
