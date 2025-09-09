@@ -18,3 +18,43 @@ export async function readPosts() {
         return console.error(error);
     }
 }
+
+async function writePosts(postsStr) {
+    try {
+        await fs.writeFile(PATH, postsStr, "utf-8");
+        return true;
+        
+    } catch (error) {
+        console.error(error);
+        return false;
+    }
+}
+
+export async function readPostById(postId) {
+    try {
+        const posts = await readPosts();
+        const post = posts.find((p) => p.id === postId);
+        return post;
+        
+    } catch (error) {
+        console.error(error);
+        return undefined;
+    }
+}
+
+export async function writePost(post) {
+    try {
+        const posts = await readPosts();
+        post.id = String(posts.length + 1);
+        post.time = new Date().toLocaleString();
+        post.imageUrl = `/images/img${post.id}.jpg`;
+        posts.push(post);
+        const jsonStr = JSON.stringify(posts, null, 2);
+        await writePosts(jsonStr);
+        return true;
+        
+    } catch (error) {
+        console.error(error);
+        return false;
+    }
+}
