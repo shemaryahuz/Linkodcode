@@ -1,0 +1,22 @@
+.footer {
+  background-color: #f5f5f5;
+  border-top: 3px outset #084a90;
+  position: fixed;
+  bottom: 0; 
+  min-width: 100vw;
+  margin-top: auto;
+  padding: 1rem;
+}
+
+.footer p {
+    color:#1c2c34;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #084a90;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
