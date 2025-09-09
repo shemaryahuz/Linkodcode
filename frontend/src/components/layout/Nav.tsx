@@ -1,13 +1,21 @@
+import { Link } from "react-router-dom";
 import "../../styles/nav.css";
 
-export default function Nav() {
+type Page = {
+  name: string;
+  url:string;
+}
+
+type NavProps = {
+  pages: Page[]
+}
+
+export default function Nav({pages}: NavProps) {
   return (
     <nav className="nav">
-      <ul>
-        <li><a href="example@.com">1</a></li>
-        <li><a href="example@.com">2</a></li>
-        <li><a href="example@.com">3</a></li>
-      </ul>
+      {pages.map((page:Page) => (
+        <p><Link to={page.url}>{page.name}</Link></p>
+      ))}
     </nav>
   )
 }

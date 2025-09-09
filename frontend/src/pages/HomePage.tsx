@@ -33,7 +33,18 @@ export default function HomePage() {
 
   return (
     <main className="page">
-      <Nav />
+      <Nav 
+        pages={[
+          {
+            name: "About",
+            url: "/about"
+          },
+          {
+            name: "Add Post",
+            url: "/add-post"
+          }
+        ]}
+      />
       {isLoading && <LoadingDisplay />}
       {!isLoading && error && <ErrorDisplay error={error} />}
       {!isLoading && !error && <PostsFeed posts={posts} />}
