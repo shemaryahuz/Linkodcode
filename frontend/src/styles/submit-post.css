@@ -5,7 +5,15 @@
     gap: 0.5rem;
 }
 
+.submit-post label, .submit-post input, .submit-post textarea {
+    color: #1c2c34;
+}
+
 .success {
     font-size: 2rem;
     margin-top: 20vh;
+}
+
+.error {
+    color: #d00;
 }

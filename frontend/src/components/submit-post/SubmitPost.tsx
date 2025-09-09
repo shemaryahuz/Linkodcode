@@ -38,7 +38,7 @@ export default function SubmitPost() {
       <label htmlFor="description">Description: </label>
       <textarea id="description" onChange={(e) => setDesc(e.target.value)}></textarea>
       <button type='submit'>Add Post</button>
-      {error && error}
+      {error && <p className='error'>Faild: {error}!</p>}
     </form>
   )
 }
