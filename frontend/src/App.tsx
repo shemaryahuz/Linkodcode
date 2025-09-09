@@ -1,6 +1,6 @@
 
 import './App.css'
-import Header from './components/common/Header'
+import Header from './components/layout/Header'
 
 import HomePage from './pages/HomePage'
 
