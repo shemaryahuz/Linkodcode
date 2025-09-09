@@ -1,0 +1,20 @@
+.footer {
+  background-color: #f5f5f5;
+  border-top: 3px outset #084a90;
+  position: sticky;
+  bottom: 0; 
+  padding: 1rem;
+}
+
+.footer p {
+    color:#1c2c34;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #084a90;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
