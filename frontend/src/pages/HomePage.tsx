@@ -4,14 +4,14 @@ import {
   type ErrorMessage,
   type Post,
 } from "../services/postsService";
-import "../styles/homePage.css";
 import PostsFeed from "../components/post/PostsFeed";
 import ErrorDisplay from "../components/common/ErrorDisplay";
+import LoadingDisplay from "../components/common/LoadingDisplay";
 
 // component to represent the hom page content
 export default function HomePage() {
-  const initPosts: Post[] = [];
-  const [ posts, setPosts ] = useState(initPosts);
+  const initArray: Post[] = [];
+  const [ posts, setPosts ] = useState(initArray);
   const [ isLoading, setIsLoading ] = useState(true);
   const [ error, setError ] = useState("");
 
@@ -19,6 +19,7 @@ export default function HomePage() {
     const result: Post[] | ErrorMessage = await fetchPosts();
     if ("error" in result) {
       setError(result.error);
+      setIsLoading(false);
       return;
     }
     setPosts(result);
@@ -31,10 +32,9 @@ export default function HomePage() {
 
   return (
     <main>
-      {error ? (
-       <ErrorDisplay error={error}/> ) : (
-       <PostsFeed posts={posts}/>)
-      }
+      {isLoading && <LoadingDisplay />}
+      {!isLoading && error && <ErrorDisplay error={error}/>}
+      {!isLoading && !error && <PostsFeed posts={posts}/>}
     </main>
   );
 }
