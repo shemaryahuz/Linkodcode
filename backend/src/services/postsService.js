@@ -46,6 +46,8 @@ export async function writePost(post) {
     try {
         const posts = await readPosts();
         post.id = String(posts.length + 1);
+        post.time = new Date().toLocaleString();
+        post.imageUrl = `/images/img${post.id}.jpg`;
         posts.push(post);
         const jsonStr = JSON.stringify(posts, null, 2);
         await writePosts(jsonStr);
