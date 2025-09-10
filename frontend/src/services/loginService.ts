@@ -25,7 +25,7 @@ async function loginOrRegister(user: User, method: string) {
             console.log(responseObj.error);
             return { error: responseObj.error || "Unknown error" };
         }
-        const token = response.headers.get("Authorization") || "token not found";
+        const token = response.headers.get("Authorization") ||  "";
         saveToken(token);
         return responseObj;
 

@@ -65,6 +65,7 @@ export async function register(req, res) {
         const token = createToken(username);
 
         res.setHeader("Authorization", token);
+        res.cookie("token", token, { httpOnly: true, maxAge: 60 * 60 * 1000 }); // one hour
 
         res.json({ message: "You have registered successfully" });
 
