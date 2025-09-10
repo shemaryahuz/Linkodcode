@@ -4,6 +4,7 @@ import { fetchPostById, type Post } from "../services/postsService";
 import LoadingDisplay from "../components/common/LoadingDisplay";
 import ErrorDisplay from "../components/common/ErrorDisplay";
 import PostCard from "../components/post/PostCard";
+import "../styles/pages/singlePostPage.css"
 
 export default function SinglePostPage() {
   const { id } = useParams();
