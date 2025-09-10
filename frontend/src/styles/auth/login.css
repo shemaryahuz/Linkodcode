@@ -1,0 +1,35 @@
+.login-form {
+    display: flex;
+    flex-direction: column;
+    margin: 10vh auto;
+    padding: 5rem;
+    gap: 0.5rem;
+}
+
+.login-form h1 {
+    color: #0072b1;
+}
+
+.login-form label, .login-form input, .login-form button, .login-form p {
+    color: #1c2c34;
+    padding: 0.2rem;
+}
+
+.login-form p {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.success {
+    color:#0072b1;
+    margin: auto 20vw;
+}
+
+.nav-home-btn {
+    margin: auto 20vw;
+}
+
+.error {
+    color: #d00;
+}
