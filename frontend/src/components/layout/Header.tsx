@@ -1,4 +1,4 @@
-import "../../styles/header.css";
+import "../../styles/layout/header.css";
 import Logo from "./Logo";
 import Slogan from "./Slogan";
 

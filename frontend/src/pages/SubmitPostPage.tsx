@@ -3,8 +3,8 @@ import SubmitPost from "../components/submit-post/SubmitPost";
 
 export default function SubmitPostPage() {
   return (
-    <div>
+    <main className="page submit-post-page">
       <SubmitPost />
-    </div>
+    </main>
   )
 }

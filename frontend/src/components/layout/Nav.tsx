@@ -1,21 +1,12 @@
 import { Link } from "react-router-dom";
-import "../../styles/nav.css";
+import "../../styles/layout/nav.css";
 
-type Page = {
-  name: string;
-  url:string;
-}
-
-type NavProps = {
-  pages: Page[]
-}
-
-export default function Nav({pages}: NavProps) {
+export default function Nav() {
   return (
     <nav className="nav">
-      {pages.map((page:Page) => (
-        <p><Link to={page.url}>{page.name}</Link></p>
-      ))}
+      <Link to={"/"} className="home-link">Home</Link>
+      <Link to={"/about"} className="home-link">About</Link>
+      <Link to={"/add-post"} className="home-link">Add Post</Link>
     </nav>
   )
 }

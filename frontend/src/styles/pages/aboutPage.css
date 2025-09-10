@@ -1,0 +1,15 @@
+.about-page {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 5rem 5rem 5rem 10rem;
+}
+
+.about-page h1 {
+    color: #0072b1;
+}
+
+.about-page p {
+    color: #1c2c34;
+    text-align: left;
+}

@@ -1,13 +1,18 @@
 
 import type { Post } from "../../services/postsService";
-import "../../styles/postCard.css";
+import "../../styles/post/postCard.css";
 import PostDetails from "./PostDetails";
 
+type PostCardProps = {
+  post: Post;
+  onPostClick: () => void;
+}
+
 // component to represent post card
-export default function PostCard(post:Post) {
+export default function PostCard({post, onPostClick}: PostCardProps) {
 
   return (
-    <section className="post-card">
+    <section className="post-card" onClick={onPostClick}>
       <img 
         className="post-img"
         src={`http://localhost:3000/api/${post.imageUrl}`} 

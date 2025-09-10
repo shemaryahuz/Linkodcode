@@ -1,4 +1,4 @@
-import "../../styles/loadingDisplay.css";
+import "../../styles/common/loadingDisplay.css";
 
 
 export default function LoadingDisplay() {

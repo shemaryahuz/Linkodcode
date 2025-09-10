@@ -1,4 +1,4 @@
-import "../../styles/errorDisplay.css";
+import "../../styles/common/errorDisplay.css";
 
 type ErrorDisplayProps = {
   error: string;

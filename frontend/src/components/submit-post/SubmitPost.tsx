@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import "../../styles/submit-post.css";
+import "../../styles/submit-post/submit-post.css";
 import { submitNewPost } from '../../services/postsService';
 
 export default function SubmitPost() {
