@@ -1,6 +1,6 @@
 
 import type { Post } from "../../services/postsService";
-import "../../styles/postCard.css";
+import "../../styles/post/postCard.css";
 import PostDetails from "./PostDetails";
 
 // component to represent post card

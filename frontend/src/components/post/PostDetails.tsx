@@ -1,6 +1,6 @@
 import type { Post } from "../../services/postsService";
 import { useState } from "react";
-import "../../styles/postDetails.css";
+import "../../styles/post/postDetails.css";
 
 export default function PostDetails({
     description,

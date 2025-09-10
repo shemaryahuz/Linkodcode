@@ -1,6 +1,6 @@
 import type { Post } from "../../services/postsService";
 import PostCard from "./PostCard";
-import "../../styles/postsFeed.css";
+import "../../styles/post/postsFeed.css";
 
 type PostsFeedProps = {
     posts: Post[];
