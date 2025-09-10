@@ -1,6 +1,6 @@
 import { readUserByUsername, writeUser } from "../services/usersService.js";
 import bcrypt from "bcrypt";
-import createToken from "../utils/createToken.js";
+import { createToken } from "../utils/jwtUtiles.js";
 
 export async function login(req, res) {
     try {
