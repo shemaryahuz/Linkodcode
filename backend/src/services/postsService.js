@@ -1,6 +1,6 @@
 // data access layer for application posts
 import fs from "fs/promises";
-import createId from "../utils/createId.js";
+import createUniqueId from "../utils/createId.js";
 
 const PATH = "./data/posts.json" // relative to app.js
 
@@ -45,7 +45,7 @@ export async function readPostById(postId) {
 export async function writePost(post) {
     try {
         const posts = await readPosts();
-        post.id = createId(posts);
+        post.id = createUniqueId(posts);
         post.time = new Date().toLocaleString();
         const randomImgNum = Math.floor(Math.random() * (20 - 1) + 1); // random 1 - 20. to change according to images in '/public/images'
         post.imageUrl = `/images/img${randomImgNum}.jpg`;
