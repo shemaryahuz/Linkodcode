@@ -1,6 +1,6 @@
 
 export interface Post {
-  id?: number;
+  id?: string;
   imageUrl?: string;
   description: string;
   author: string;
@@ -26,6 +26,26 @@ export async function fetchPosts(): Promise<Post[] | ErrorMessage> {
       }
 
       return body.posts;
+    } catch (error) {
+      console.error(error);
+      return { error: "Network error" }
+    }
+}
+
+export async function fetchPostById(postId: string | undefined): Promise<Post | ErrorMessage> {
+    try {
+
+      const res = await fetch(`${POSTS_URL}/${postId}`);
+      const body = await res.json();
+
+      console.log(body);
+
+      if (!res.ok) {
+        return { error: body.error || "Unknown error" }
+      }
+
+      return body;
+
     } catch (error) {
       console.error(error);
       return { error: "Network error" }
