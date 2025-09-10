@@ -1,8 +1,13 @@
 .submit-post {
     display: flex;
     flex-direction: column;
+    margin: 10vh auto;
     padding: 5rem;
     gap: 0.5rem;
+}
+
+.submit-post h1 {
+    color: #0072b1;
 }
 
 .submit-post label, .submit-post input, .submit-post textarea {

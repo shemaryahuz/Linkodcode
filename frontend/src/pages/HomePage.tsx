@@ -7,7 +7,6 @@ import {
 import PostsFeed from "../components/post/PostsFeed";
 import ErrorDisplay from "../components/common/ErrorDisplay";
 import LoadingDisplay from "../components/common/LoadingDisplay";
-import Nav from "../components/layout/Nav";
 
 // component to represent the hom page content
 export default function HomePage() {
@@ -32,19 +31,7 @@ export default function HomePage() {
   }, []);
 
   return (
-    <main className="page">
-      <Nav 
-        pages={[
-          {
-            name: "About",
-            url: "/about"
-          },
-          {
-            name: "Add Post",
-            url: "/add-post"
-          }
-        ]}
-      />
+    <main className="page home-page">
       {isLoading && <LoadingDisplay />}
       {!isLoading && error && <ErrorDisplay error={error} />}
       {!isLoading && !error && <PostsFeed posts={posts} />}

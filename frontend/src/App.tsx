@@ -6,7 +6,7 @@ import './App.css'
 import HomePage from './pages/HomePage'
 import Layout from './components/layout/Layout'
 import AboutPage from './pages/AboutPage'
-import AddPostPage from './pages/SubmitPostPage'
+import SubmitPostPage from './pages/SubmitPostPage'
 
 function App() {
 
@@ -16,7 +16,7 @@ function App() {
         <Route path='/' element={<Layout />}>
           <Route path='/' element={<HomePage />} />
           <Route path='/about' element={<AboutPage />} />
-          <Route path='/add-post' element={<AddPostPage />} />
+          <Route path='/add-post' element={<SubmitPostPage />} />
         </Route>
       </Routes>
     </div>
