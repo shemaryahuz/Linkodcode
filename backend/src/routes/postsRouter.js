@@ -1,14 +1,15 @@
 // router for '/posts' endpoints
 import express from "express";
 import { addPost, getAllPosts, getPost } from "../controllers/postsController.js";
-import { validatePost } from "../../middlewares/postsMiddlware.js";
+import { validatePost } from "../middlewares/postsMiddlware.js";
+import { authenticateToken } from "../middlewares/authMiddleware.js";
 
 const postsRouter = express.Router();
 
-postsRouter.get("/", getAllPosts);
+postsRouter.get("/", authenticateToken, getAllPosts);
 
-postsRouter.get("/:id", getPost);
+postsRouter.get("/:id", authenticateToken, getPost);
 
-postsRouter.post("/", validatePost, addPost);
+postsRouter.post("/", authenticateToken, validatePost, addPost);
 
 export default postsRouter;

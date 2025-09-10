@@ -27,6 +27,7 @@ export async function getPost(req, res) {
         res.json(post);
 
     } catch (error) {
+        console.error(error);
         return res.status(500).json({ error: "Internal server error" });
     }
 }
