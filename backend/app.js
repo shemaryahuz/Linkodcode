@@ -6,7 +6,13 @@ import authRouter from "./src/routes/authRouter.js";
 
 const app = express();
 
-app.use(cors());
+// allow cors for localhost react app
+app.use(cors({
+    origin:["http://localhost:5173", "http://localhost:5174"],
+    methods:["GET", "POST", "PUT", "DELETE"],
+    credentials:true,
+    allowedHeaders:["Content-Type"]
+}));
 
 const __dirname = path.resolve();
 app.use("/api", express.static(path.join(__dirname, "public")));
