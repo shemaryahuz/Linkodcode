@@ -1,5 +1,6 @@
 // data access layer for application posts
 import fs from "fs/promises";
+import createId from "../utils/createId.js";
 
 const PATH = "./data/posts.json" // relative to app.js
 
@@ -7,7 +8,6 @@ const PATH = "./data/posts.json" // relative to app.js
 export async function readPosts() {
     try {
         const data = await fs.readFile(PATH, "utf-8");
-        console.log(data);
 
         const json = await JSON.parse(data);
         console.log(json);
@@ -45,9 +45,10 @@ export async function readPostById(postId) {
 export async function writePost(post) {
     try {
         const posts = await readPosts();
-        post.id = String(posts.length + 1);
+        post.id = createId(posts);
         post.time = new Date().toLocaleString();
-        post.imageUrl = `/images/img${post.id}.jpg`;
+        const randomImgNum = Math.floor(Math.random() * (20 - 1) + 1); // random 1 - 20. to change according to images in '/public/images'
+        post.imageUrl = `/images/img${randomImgNum}.jpg`;
         posts.push(post);
         const jsonStr = JSON.stringify(posts, null, 2);
         await writePosts(jsonStr);

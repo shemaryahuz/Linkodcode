@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import path from "path";
 import postsRouter from "./src/routes/postsRouter.js";
+import authRouter from "./src/routes/authRouter.js";
 
 const app = express();
 
@@ -11,6 +12,8 @@ const __dirname = path.resolve();
 app.use("/api", express.static(path.join(__dirname, "public")));
 
 app.use(express.json());
+
+app.use("/api", authRouter);
 
 app.use("/api/posts", postsRouter);
 
