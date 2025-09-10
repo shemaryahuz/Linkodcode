@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import cookieParser from "cookie-parser";
 import path from "path";
 import postsRouter from "./src/routes/postsRouter.js";
 import authRouter from "./src/routes/authRouter.js";
@@ -11,13 +12,16 @@ app.use(cors({
     origin:["http://localhost:5173", "http://localhost:5174"],
     methods:["GET", "POST", "PUT", "DELETE"],
     credentials:true,
-    allowedHeaders:["Content-Type"]
+    allowedHeaders:["Content-Type", "Authorization"],
+    
 }));
 
 const __dirname = path.resolve();
 app.use("/api", express.static(path.join(__dirname, "public")));
 
 app.use(express.json());
+
+app.use(cookieParser());
 
 app.use("/api", authRouter);
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { login, register } from "../../services/authService";
+import { login, register } from "../../services/loginService";
 import { useNavigate } from "react-router-dom";
 import "../../styles/auth/login.css";
 

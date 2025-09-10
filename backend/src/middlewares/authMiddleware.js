@@ -3,7 +3,7 @@ import { getDecodedToken } from "../utils/jwtUtiles.js";
 export function authenticateToken(req, res, next) {
     try {
 
-        const token = req.headers.authorization;
+        const token = req.headers.authorization || req.cookies.token;
 
         if (!token) {
             return res.status(401).json({ error: "Authentication required" });
