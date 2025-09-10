@@ -1,3 +1,4 @@
+import { getToken } from "./authService";
 
 export interface Post {
   id?: string;
@@ -35,7 +36,15 @@ export async function fetchPosts(): Promise<Post[] | ErrorMessage> {
 export async function fetchPostById(postId: string | undefined): Promise<Post | ErrorMessage> {
     try {
 
-      const res = await fetch(`${POSTS_URL}/${postId}`);
+      const req = {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "authorization": getToken() || "",
+        }
+      };
+
+      const res = await fetch(`${POSTS_URL}/${postId}`, req);
       const body = await res.json();
 
       console.log(body);
@@ -57,7 +66,8 @@ export async function submitNewPost(post:Post): Promise<any | ErrorMessage> {
       const req = {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
+          "authorization": getToken() || "token not found",
         },
         body: JSON.stringify(post)
       };
