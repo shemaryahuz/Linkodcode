@@ -23,6 +23,7 @@
 .like-btn {
     max-height: 2.5rem;
     border: none;
+    cursor: pointer;
 }
 
 .like-btn img{
