@@ -1,5 +1,5 @@
 import type { Post } from "../../services/postsService";
-import { useState } from "react";
+import React, { useState } from "react";
 import "../../styles/post/postDetails.css";
 
 export default function PostDetails({
@@ -21,7 +21,7 @@ export default function PostDetails({
                 <p className="time">{time}</p>
                 <button 
                     className="like-btn"
-                    onClick={() => toggleLike()}
+                    onClick={(e: React.MouseEvent ) => {e.stopPropagation(); toggleLike();}}
                 >
                     {like ? (
                         <img src="/images/like-icon-clicked.png" alt="like icon clicked" />
