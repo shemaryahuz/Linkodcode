@@ -17,7 +17,15 @@ const POSTS_URL = "http://localhost:3000/api/posts";
 export async function fetchPosts(): Promise<Post[] | ErrorMessage> {
     try {
 
-      const res = await fetch(POSTS_URL);
+      const req: RequestInit = {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "authorization": getToken() || "",
+        },
+        credentials: "include"
+      };
+      const res = await fetch(POSTS_URL, req);
       const body = await res.json();
 
       console.log(body);
@@ -36,12 +44,13 @@ export async function fetchPosts(): Promise<Post[] | ErrorMessage> {
 export async function fetchPostById(postId: string | undefined): Promise<Post | ErrorMessage> {
     try {
 
-      const req = {
+      const req: RequestInit = {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
           "authorization": getToken() || "",
-        }
+        },
+        credentials: "include"
       };
 
       const res = await fetch(`${POSTS_URL}/${postId}`, req);
@@ -63,13 +72,14 @@ export async function fetchPostById(postId: string | undefined): Promise<Post | 
 
 export async function submitNewPost(post:Post): Promise<any | ErrorMessage> {
     try {
-      const req = {
+      const req: RequestInit = {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "authorization": getToken() || "token not found",
+          "authorization": getToken() || "",
         },
-        body: JSON.stringify(post)
+        body: JSON.stringify(post),
+        credentials: "include"
       };
       const res = await fetch(POSTS_URL, req);
       const body = await res.json();

@@ -26,7 +26,7 @@ export async function login(req, res) {
         const token = createToken(username);
 
         res.setHeader("Authorization", token);
-
+        res.cookie("token", token, { secure: false, sameSite: "lax", httpOnly: true, maxAge: 60 * 60 * 1000 }); // one hour
         res.json({ message: "You logged in successfully" });
 
     } catch (error) {
@@ -65,7 +65,7 @@ export async function register(req, res) {
         const token = createToken(username);
 
         res.setHeader("Authorization", token);
-        res.cookie("token", token, { httpOnly: true, maxAge: 60 * 60 * 1000 }); // one hour
+        res.cookie("token", token, { secure: false, sameSite: "lax", httpOnly: true, maxAge: 60 * 60 * 1000 }); // one hour
 
         res.json({ message: "You have registered successfully" });
 
