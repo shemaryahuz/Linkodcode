@@ -24,9 +24,9 @@ export default function PostDetails({
                     onClick={() => toggleLike()}
                 >
                     {like ? (
-                        <img src="images/like-icon-clicked.png" alt="like icon clicked" />
+                        <img src="/images/like-icon-clicked.png" alt="like icon clicked" />
                     ) : (
-                        <img src="images/like-icon.png" alt="like icon" />
+                        <img src="/images/like-icon.png" alt="like icon" />
                     )}
                 </button>
             </section>
