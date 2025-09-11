@@ -10,7 +10,7 @@ type PostsFeedProps = {
 export default function PostsFeed({ posts }: PostsFeedProps) {
   const navigate = useNavigate();
   const navToSinglePost = (postId: string) => {
-    navigate(`/${postId}`)
+    navigate(`./${postId}`)
   }
   const OnCardClick = (id: string | undefined) => {
     navToSinglePost(id || "");
