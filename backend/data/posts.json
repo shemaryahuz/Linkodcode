@@ -19,19 +19,5 @@
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis eligendi dolores adipisci a eos aliquid hic, velit porro eveniet quam ipsam natus necessitatibus nisi! Dignissimos rem ex neque ipsum accusantium?",
     "author": "Bobe",
     "time": "1/1/2025, 4:21:40 PM"
-  },
-  {
-    "id": "4",
-    "imageUrl": "/images/img4.jpg",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit saepe, eaque aut incidunt nam, voluptatem cum id alias reprehenderit libero enim sequi est exercitationem inventore corporis ipsa praesentium explicabo tempore!",
-    "author": "David",
-    "time": "1/1/2025, 4:21:40 PM"
-  },
-  {
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit saepe, eaque aut incidunt nam, voluptatem cum id alias reprehenderit libero enim sequi est exercitationem inventore corporis ipsa praesentium explicabo tempore!",
-    "author": "Abe",
-    "id": "5",
-    "time": "9/9/2025, 4:21:40 PM",
-    "imageUrl": "/images/img5.jpg"
   }
 ]
